@@ -30,7 +30,7 @@ const ResultPage =async () => {
       <h1 className="text-5xl p-4 mb-6 text-center">Hi</h1>
       <div className="bg-appOrange text-3xl md:mx-auto font-extrabold p-6">
         <h2 className="mb-4">Check your</h2>
-        <h2 className="text-gray-900">History</h2>
+        <h2 className="text-gray-200">History</h2>
       </div>
       <p className="text-white">{BASE_API_URL}</p>
 
