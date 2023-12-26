@@ -1,11 +1,10 @@
-"use client";
+export {BASE_API_URL} from '@/utils/constants'
 import ResultCard from "@/components/ResultCard";
 
-import { useEffect, useState } from "react";
 
 async function loadResults() {
   try {
-    const res = await fetch(`/api/routine`);
+    const res = await fetch(`${BASE_API_URL}/api/routine`);
     if (!res.ok) {
       throw new Error("Failed to fetch results");
     }
@@ -17,17 +16,9 @@ async function loadResults() {
     return [];
   }
 }
-const ResultPage = () => {
-  const [results, setResults] = useState([]);
+const ResultPage = async() => {
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await loadResults();
-      setResults(data);
-    };
-
-    fetchData();
-  }, []);
+  const  results = await loadResults();
 
   return (
     <main className="md:flex md:flex-col text-center  mt-20">
