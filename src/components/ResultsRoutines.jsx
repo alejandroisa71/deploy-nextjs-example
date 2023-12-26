@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 async function loadResults() {
   try {
-    const res = await fetch(`http://localhost:3000/api/routine`);
+    const res = await fetch(`/api/routine`);
     if (!res.ok) {
       throw new Error("Failed to fetch results");
     }
