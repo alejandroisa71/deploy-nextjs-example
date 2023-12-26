@@ -18,11 +18,12 @@ async function loadResults() {
   }
 }
 const ResultPage =async () => {
-if(!BASE_API_URL){
-  return null;
-}
+// if(!BASE_API_URL){
+//   return null;
+// }
 
   const results = await loadResults()
+  // console.log(results.results)
 
   return (
     <main className="md:flex md:flex-col text-center  mt-20">
