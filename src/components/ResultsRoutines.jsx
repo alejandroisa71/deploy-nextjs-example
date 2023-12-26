@@ -9,6 +9,7 @@ async function loadResults() {
     if (!res.ok) {
       throw new Error("Failed to fetch results");
     }
+    // console.log(BASE_API_URL)
 
     const data = await res.json();
     return data;
@@ -23,7 +24,6 @@ const ResultPage =async () => {
 // }
 
   const results = await loadResults()
-  console.log('--------------------------------')
 
   return (
     <main className="md:flex md:flex-col text-center  mt-20">
@@ -32,6 +32,7 @@ const ResultPage =async () => {
         <h2 className="mb-4">Check your</h2>
         <h2 className="text-gray-900">History</h2>
       </div>
+      <p className="text-white">{BASE_API_URL}</p>
 
       <ul className="text-orange-600 mt-20 text-bold">
         {results.map((result) => (
