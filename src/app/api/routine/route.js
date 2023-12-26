@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 import { db } from "@/libs/db";
 
-export async function GET(request, { params }) {
+export async function GET(request) {
 
     // const creatorId = parseInt(params.id, 10);
 

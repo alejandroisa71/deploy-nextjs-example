@@ -23,7 +23,7 @@ const ResultPage =async () => {
 // }
 
   const results = await loadResults()
-  // console.log(results.results)
+  console.log('--------------------------------')
 
   return (
     <main className="md:flex md:flex-col text-center  mt-20">
