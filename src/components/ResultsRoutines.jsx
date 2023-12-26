@@ -1,10 +1,11 @@
-export {BASE_API_URL} from '@/utils/constants'
 import ResultCard from "@/components/ResultCard";
+import { BASE_API_URL } from "@/utils/constants";
+
 
 
 async function loadResults() {
   try {
-    const res = await fetch(`${BASE_API_URL}/api/routine`);
+    const res = await fetch(`${process.env.BASE_API_URL}/api/routine`);
     if (!res.ok) {
       throw new Error("Failed to fetch results");
     }
@@ -16,9 +17,9 @@ async function loadResults() {
     return [];
   }
 }
-const ResultPage = async() => {
+const ResultPage =async () => {
 
-  const  results = await loadResults();
+  const results = await loadResults()
 
   return (
     <main className="md:flex md:flex-col text-center  mt-20">
