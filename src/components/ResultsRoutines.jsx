@@ -5,7 +5,7 @@ import { BASE_API_URL } from "@/utils/constants";
 
 async function loadResults() {
   try {
-    const res = await fetch(`${process.env.BASE_API_URL}/api/routine`);
+    const res = await fetch(`${BASE_API_URL}/api/routine`);
     if (!res.ok) {
       throw new Error("Failed to fetch results");
     }
@@ -18,6 +18,9 @@ async function loadResults() {
   }
 }
 const ResultPage =async () => {
+if(!BASE_API_URL){
+  return null;
+}
 
   const results = await loadResults()
 
